@@ -147,7 +147,7 @@ REST_FRAMEWORK = {
 }
 
 CORS_ALLOWED_ORIGINS = [
-    "https://your-home-finance-deployment"
+    "https://your-home-finance"
 ]
 
 #JWT SETTINGS
