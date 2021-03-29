@@ -30,7 +30,8 @@ class ExpenseStats(APIView):
         ending_date = datetime.date.fromisoformat(request.data['end'])
 
         #First calculate the labels which then can be used to make the queries
-        i = initial_date
+        #we need to correct for difference of days in each month
+        i = initial_date.replace(day=1)
         labels=[]
         while i<=ending_date:
             month = i.month
@@ -61,12 +62,11 @@ class ExpenseStats(APIView):
 
                 if sum['amount__sum']==None:
                     sum['amount__sum']=0
-                print(sum)
                 #add the sum to the serie
                 values['data'].append(sum['amount__sum'])
             series.append(values)
         data = {'series':series,'labels':labels}
-        
+        print(data)
         return Response(data,status=status.HTTP_200_OK)
 
     

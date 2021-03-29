@@ -40,6 +40,7 @@ function Statistics({ isLoged }) {
 
   const submit = () => {
     axiosInstance.post("api/statistics/", timeFrame).then((response) => {
+      //console.log(response);
       let resData = {
         labels: [1, 2, 3, 4, 5, 6, 7],
         datasets: [],

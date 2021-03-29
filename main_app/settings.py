@@ -182,6 +182,6 @@ SIMPLE_JWT = {
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
 #SECURE_SSL_REDIRECT = True
-ADMINS = [('Jhon', 'jhonidrovo3@gmail.com')]
+ADMINS = [('Jhon', 'jhonidrovo3example@gmail.com')]
 
 #SECURE_HSTS_SECONDS

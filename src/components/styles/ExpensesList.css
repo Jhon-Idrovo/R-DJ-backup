@@ -5,9 +5,11 @@ table {
   margin-top: 5px;
 }
 
-td,
-th {
-  border: lightseagreen;
-  border-style: solid;
-  border-block-width: 2px;
+.exp-show-thead th {
+  border: ridge;
+  background-color: blanchedalmond;
+}
+
+.exp-show-tr td {
+  border-bottom: 0.1em solid rgb(253, 253, 253);
 }

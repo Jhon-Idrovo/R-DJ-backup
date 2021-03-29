@@ -42,7 +42,7 @@ function ExpensesList({ isLoged }) {
 
   return (
     <table>
-      <thead>
+      <thead className="exp-show-thead">
         <tr>
           <th>Fecha</th>
           <th>Tipo</th>
@@ -50,7 +50,7 @@ function ExpensesList({ isLoged }) {
           <th>Monto</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody className="exp-show-tbody">
         {expenses.map((exp, index) => {
           return <Expense exp={exp} key={index} />;
         })}

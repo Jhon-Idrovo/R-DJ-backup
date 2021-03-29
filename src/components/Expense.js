@@ -1,10 +1,9 @@
 import React from "react";
-import "./styles/Expense.css";
 
 function Expense({ exp }) {
   return (
     <>
-      <tr>
+      <tr className="exp-show-tr">
         <td>{exp.date}</td>
         <td>{exp.exp_type}</td>
         <td>{exp.description}</td>
