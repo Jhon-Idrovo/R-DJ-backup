@@ -131,11 +131,11 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-STATIC_ROOT= BASE_DIR/'staticfiles'
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATIC_ROOT= BASE_DIR/'staticfiles'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-STATICFILES_DIRS =[BASE_DIR/'build/static', 
-'/var/www/static/',]
+# STATICFILES_DIRS =[BASE_DIR/'build/static', 
+# '/var/www/static/',]
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [

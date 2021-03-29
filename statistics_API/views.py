@@ -64,7 +64,7 @@ class ExpenseStats(APIView):
                 print(sum)
                 #add the sum to the serie
                 values['data'].append(sum['amount__sum'])
-                
+            series.append(values)
         data = {'series':series,'labels':labels}
         
         return Response(data,status=status.HTTP_200_OK)

@@ -1,6 +1,8 @@
 import axios from "axios";
 
-const baseURL = "https://react-django-home-finance.herokuapp.com/";
+const baseURL = "http://127.0.0.1:8000/";
+//const baseURL = "https://your-home-finance.herokuapp.com/";
+
 const axiosInstance = axios.create({
   baseURL: baseURL,
   timeout: 5000,
@@ -43,7 +45,6 @@ axiosInstance.interceptors.response.use(
       error.response.status === 401 &&
       error.response.statusText === "Unauthorized"
     ) {
-      console.log("making a new refresh token");
       const refreshToken = localStorage.getItem("refresh_token");
 
       if (refreshToken) {
@@ -58,7 +59,6 @@ axiosInstance.interceptors.response.use(
           return axiosInstance
             .post("/api/token/refresh/", { refresh: refreshToken })
             .then((response) => {
-              console.log(response.data);
               localStorage.setItem("access_token", response.data.access);
               // localStorage.setItem("refresh_token", response.data.refresh);
 

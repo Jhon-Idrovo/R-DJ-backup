@@ -21,8 +21,7 @@ function CreateExp({ isLoged }) {
     axiosInstance
       .post("api/save-expenses/", expenses)
       .then((res) => {
-        console.log(res);
-        if (res.status == 200) {
+        if (res.status == 201) {
           setExpenses([{ ...baseExpense }]);
         } else throw Error;
       })
@@ -37,12 +36,10 @@ function CreateExp({ isLoged }) {
   };
 
   const handleChange = (e, index, inputField) => {
-    console.log("handling change" + inputField + index);
     let oldExp = Object.assign([], expenses);
-    console.log(oldExp);
+
     oldExp[parseInt(index)][inputField] = e.target.value;
     setExpenses(oldExp);
-    console.log(expenses);
   };
 
   if (!isLoged) return <LogNeeded />;

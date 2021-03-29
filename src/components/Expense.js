@@ -4,7 +4,7 @@ import "./styles/Expense.css";
 function Expense({ exp }) {
   return (
     <>
-      <tr key={exp.id}>
+      <tr>
         <td>{exp.date}</td>
         <td>{exp.exp_type}</td>
         <td>{exp.description}</td>

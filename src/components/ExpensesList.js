@@ -51,8 +51,8 @@ function ExpensesList({ isLoged }) {
         </tr>
       </thead>
       <tbody>
-        {expenses.map((exp) => {
-          return <Expense exp={exp} />;
+        {expenses.map((exp, index) => {
+          return <Expense exp={exp} key={index} />;
         })}
       </tbody>
     </table>

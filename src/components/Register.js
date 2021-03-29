@@ -19,8 +19,9 @@ function Register() {
     axiosInstance
       .post(url, form)
       .then((response) => {
-        console.log(response);
-        history.push("/login/");
+        if (response.status === 201) {
+          history.push("/login/");
+        }
       })
       .catch((err) => {
         console.log(err);
