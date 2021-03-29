@@ -57,7 +57,8 @@ function Login({ isLoged, setIsLoged }) {
           onClick={handleSubmit}
         />
         <p>
-          No tienes una cuenta? <Link to="/register">Registrate aquí</Link>
+          No tienes una cuenta?{" "}
+          <Link to="/register">Registrate presionando aquí</Link>
         </p>
       </form>
     </div>

@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = str(os.getenv('SECRET_KEY'))
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['your-home-finance.herokuapp.com', '127.0.0.1']
 
@@ -185,3 +185,9 @@ SESSION_COOKIE_SECURE = True
 ADMINS = [('Jhon', 'jhonidrovo3example@gmail.com')]
 
 #SECURE_HSTS_SECONDS
+
+
+import mimetypes
+
+mimetypes.add_type("text/javascript", ".js", True)
+mimetypes.add_type("text/css", ".css", True)

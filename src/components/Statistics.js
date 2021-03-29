@@ -16,6 +16,12 @@ const options = {
     yAxes: [
       {
         stacked: true,
+        ticks: {
+          // Include a dollar sign in the ticks
+          callback: function (value, index, values) {
+            return "$" + value;
+          },
+        },
       },
     ],
   },
@@ -65,6 +71,9 @@ function Statistics({ isLoged }) {
   if (!isLoged) return <LogNeeded />;
   return (
     <div>
+      <h4 className="graph-header">
+        Monto acumulado por cada tipo de gasto por mes
+      </h4>
       <Line data={data} options={options} />
       <form className="stats-form">
         <span id="dates-container">

@@ -140,3 +140,15 @@ a:hover {
 .form p {
   margin-top: 5%;
 }
+
+/* error messages  */
+#error-msgs li {
+  display: list-item;
+  color: red;
+  list-style: circle inside;
+  font-size: 0.9em;
+}
+
+.form-container a {
+  color: brown;
+}

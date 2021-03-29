@@ -15,6 +15,8 @@ function CreateExp({ isLoged }) {
     JSON.parse(JSON.stringify(baseExpense)),
   ]);
 
+  const [emptyValue, setEmptyValue] = useState(false);
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -32,6 +34,16 @@ function CreateExp({ isLoged }) {
 
   const addRow = (e) => {
     e.preventDefault();
+    //run verification of no empty values
+    const lastRow = expenses[expenses.length - 1];
+    for (let prop in lastRow) {
+      console.log(lastRow[prop]);
+      if (!lastRow[prop]) {
+        setEmptyValue(true);
+        return;
+      }
+    }
+    setEmptyValue(false);
     setExpenses([...expenses, JSON.parse(JSON.stringify(baseExpense))]);
   };
 
@@ -72,6 +84,14 @@ function CreateExp({ isLoged }) {
             </button>
           </tfoot>
         </table>
+        {emptyValue && (
+          <div id="empty-row-err">
+            <p>
+              Porfavor llena todas las casillas anteriores para poder añadir una
+              nueva fila
+            </p>
+          </div>
+        )}
         <div id="submit-container">
           <input
             type="submit"

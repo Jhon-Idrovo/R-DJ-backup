@@ -58,3 +58,14 @@
 .exp-submit-btn:hover {
   background-color: rgb(247, 174, 174);
 }
+
+#empty-row-err {
+  width: 100%;
+  color: red;
+  text-align: center;
+  margin-top: 5px;
+}
+
+#empty-row-err p {
+  background-color: aliceblue;
+}
