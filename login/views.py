@@ -1,6 +1,9 @@
 import os
 from django.shortcuts import render
 from django.contrib.auth.hashers import make_password
+from django.views.generic import TemplateView
+from django.views.generic.base import TemplateResponseMixin
+from django.http import HttpResponse
 
 from rest_framework import status, generics
 from rest_framework.views import APIView
@@ -28,6 +31,7 @@ class BlacklistTokenView(APIView):
 
 class CreateUser(APIView):
     permission_classes = [AllowAny]
+    
 
     def post(self, request, format='json'):
         data = request.data
@@ -40,11 +44,15 @@ class CreateUser(APIView):
                 return Response(status=status.HTTP_201_CREATED)
         return Response(reg_serializer.errors,status=status.HTTP_400_BAD_REQUEST)
 
-        def get(self, _request, filename):
-            path = os.path.join(os.path.dirname(__file__), 'dist', filename)
 
-            if os.path.isfile(path):
-                with open(path, 'rb') as file:
-                    return Response(file.read(), content_type='application/javascript')
-            else:
-                return Response(status=status.HTTP_400_BAD_REQUEST)
+class Home( TemplateView):
+    content_type='application/javascript'
+
+    # def get(self, _request, filename):
+    #     path = os.path.join(os.path.dirname(__file__), 'build', filename)
+
+    #     if os.path.isfile(path):
+    #         with open(path, 'rb') as file:
+    #             return HttpResponse(file.read(), content_type='application/javascript')
+    #     else:
+    #         return HttpResponse(status=status.HTTP_400_BAD_REQUEST)

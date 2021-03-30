@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include,re_path
-from django.views.generic import TemplateView
+from .views import Home
 #JWT
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
@@ -33,5 +33,5 @@ urlpatterns = [
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 
-    #re_path('.*', TemplateView.as_view(template_name='index.html'))
+    re_path('.*', Home.as_view(template_name='index.html'))
 ]
