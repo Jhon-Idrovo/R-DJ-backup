@@ -1,5 +1,5 @@
 from django.urls import path, re_path
-from .views import BlacklistTokenView, CreateUser, Home
+from .views import BlacklistTokenView, CreateUser
 
 app_name = 'login'
 
