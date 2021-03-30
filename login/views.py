@@ -1,3 +1,4 @@
+import os
 from django.shortcuts import render
 from django.contrib.auth.hashers import make_password
 
@@ -38,3 +39,12 @@ class CreateUser(APIView):
             if new_user:
                 return Response(status=status.HTTP_201_CREATED)
         return Response(reg_serializer.errors,status=status.HTTP_400_BAD_REQUEST)
+
+        def get(self, _request, filename):
+            path = os.path.join(os.path.dirname(__file__), 'dist', filename)
+
+            if os.path.isfile(path):
+                with open(path, 'rb') as file:
+                    return Response(file.read(), content_type='application/javascript')
+            else:
+                return Response(status=status.HTTP_400_BAD_REQUEST)
