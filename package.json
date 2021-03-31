@@ -1,6 +1,6 @@
 {
   "name": "home-finance-api",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",
@@ -18,9 +18,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "postinstall": "npm run-script build"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
